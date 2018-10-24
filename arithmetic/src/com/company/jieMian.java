@@ -169,7 +169,7 @@ public class jieMian {
                     public void run() {
                         finishTime =System.currentTimeMillis();
                         duration= finishTime - startTime;
-                        if(duration/1000==120 && summary<tishu)
+                        if(duration/1000==60 && summary<tishu && ((allDuration+duration)/1000<120))
                         {
                             JOptionPane.showMessageDialog(null,
                                     "答题时间已到。答题总题数为"+(dadui+dacuo)+"," +
@@ -185,7 +185,7 @@ public class jieMian {
                 }, 1000, 1000);
                 allDuration = allDuration +duration;//记录全程算法所用的时间
                 //生成一个随机算术
-                 Random random = new Random();
+                Random random = new Random();
                 int a =random.nextInt(200) - 100;
                 int b=random.nextInt(200) - 100;
                 int c=random.nextInt(200) - 100;
@@ -284,87 +284,87 @@ public class jieMian {
                                 break;
                         }
                         break;
-                     case 2:
-                         switch (second){
-                             case 0:
-                                 sum= a * b + c;
-                                 suanshi=fushu(a,suanshi);
-                                 suanshi=suanshi+"*";
-                                 suanshi=suanshi+fushu(b,suanshi);
-                                 suanshi=suanshi+"+";
-                                 suanshi=suanshi+fushu(c,suanshi);
-                                 T2.setText(suanshi);
-                                 //T2.setText(a+"*"+b+"+"+c);
-                                 break;
-                             case 1:
-                                 sum= a * b - c;
-                                 suanshi=fushu(a,suanshi);
-                                 suanshi=suanshi+"*";
-                                 suanshi=suanshi+fushu(b,suanshi);
-                                 suanshi=suanshi+"-";
-                                 suanshi=suanshi+fushu(c,suanshi);
-                                 T2.setText(suanshi);
-                                 break;
+                    case 2:
+                        switch (second){
+                            case 0:
+                                sum= a * b + c;
+                                suanshi=fushu(a,suanshi);
+                                suanshi=suanshi+"*";
+                                suanshi=suanshi+fushu(b,suanshi);
+                                suanshi=suanshi+"+";
+                                suanshi=suanshi+fushu(c,suanshi);
+                                T2.setText(suanshi);
+                                //T2.setText(a+"*"+b+"+"+c);
+                                break;
+                            case 1:
+                                sum= a * b - c;
+                                suanshi=fushu(a,suanshi);
+                                suanshi=suanshi+"*";
+                                suanshi=suanshi+fushu(b,suanshi);
+                                suanshi=suanshi+"-";
+                                suanshi=suanshi+fushu(c,suanshi);
+                                T2.setText(suanshi);
+                                break;
 
-                             case 2:
-                                 sum= a * b * c;
-                                 suanshi=fushu(a,suanshi);
-                                 suanshi=suanshi+"*";
-                                 suanshi=suanshi+fushu(b,suanshi);
-                                 suanshi=suanshi+"*";
-                                 suanshi=suanshi+fushu(c,suanshi);
-                                 T2.setText(suanshi);
-                                 break;
-                             case 3:
-                                 sum= a * b / c;
-                                 suanshi=fushu(a,suanshi);
-                                 suanshi=suanshi+"*";
-                                 suanshi=suanshi+fushu(b,suanshi);
-                                 suanshi=suanshi+"/";
-                                 suanshi=suanshi+fushu(c,suanshi);
-                                 T2.setText(suanshi);
-                                 break;
-                         }
+                            case 2:
+                                sum= a * b * c;
+                                suanshi=fushu(a,suanshi);
+                                suanshi=suanshi+"*";
+                                suanshi=suanshi+fushu(b,suanshi);
+                                suanshi=suanshi+"*";
+                                suanshi=suanshi+fushu(c,suanshi);
+                                T2.setText(suanshi);
+                                break;
+                            case 3:
+                                sum= a * b / c;
+                                suanshi=fushu(a,suanshi);
+                                suanshi=suanshi+"*";
+                                suanshi=suanshi+fushu(b,suanshi);
+                                suanshi=suanshi+"/";
+                                suanshi=suanshi+fushu(c,suanshi);
+                                T2.setText(suanshi);
+                                break;
+                        }
                         break;
-                     case 3:
-                         switch (second){
-                             case 0:
-                                 sum= a / b + c;
-                                 suanshi=fushu(a,suanshi);
-                                 suanshi=suanshi+"/";
-                                 suanshi=suanshi+fushu(b,suanshi);
-                                 suanshi=suanshi+"+";
-                                 suanshi=suanshi+fushu(c,suanshi);
-                                 T2.setText(suanshi);
-                                 break;
-                             case 1:
-                                 sum= a / b - c;
-                                 suanshi=fushu(a,suanshi);
-                                 suanshi=suanshi+"/";
-                                 suanshi=suanshi+fushu(b,suanshi);
-                                 suanshi=suanshi+"-";
-                                 suanshi=suanshi+fushu(c,suanshi);
-                                 T2.setText(suanshi);
-                                 break;
-                             case 2:
-                                 sum= a / b * c;
-                                 suanshi=fushu(a,suanshi);
-                                 suanshi=suanshi+"/";
-                                 suanshi=suanshi+fushu(b,suanshi);
-                                 suanshi=suanshi+"*";
-                                 suanshi=suanshi+fushu(c,suanshi);
-                                 T2.setText(suanshi);
-                                 break;
-                             case 3:
-                                 sum= a / b / c;
-                                 suanshi=fushu(a,suanshi);
-                                 suanshi=suanshi+"/";
-                                 suanshi=suanshi+fushu(b,suanshi);
-                                 suanshi=suanshi+"/";
-                                 suanshi=suanshi+fushu(c,suanshi);
-                                 T2.setText(suanshi);
-                                 break;
-                         }
+                    case 3:
+                        switch (second){
+                            case 0:
+                                sum= a / b + c;
+                                suanshi=fushu(a,suanshi);
+                                suanshi=suanshi+"/";
+                                suanshi=suanshi+fushu(b,suanshi);
+                                suanshi=suanshi+"+";
+                                suanshi=suanshi+fushu(c,suanshi);
+                                T2.setText(suanshi);
+                                break;
+                            case 1:
+                                sum= a / b - c;
+                                suanshi=fushu(a,suanshi);
+                                suanshi=suanshi+"/";
+                                suanshi=suanshi+fushu(b,suanshi);
+                                suanshi=suanshi+"-";
+                                suanshi=suanshi+fushu(c,suanshi);
+                                T2.setText(suanshi);
+                                break;
+                            case 2:
+                                sum= a / b * c;
+                                suanshi=fushu(a,suanshi);
+                                suanshi=suanshi+"/";
+                                suanshi=suanshi+fushu(b,suanshi);
+                                suanshi=suanshi+"*";
+                                suanshi=suanshi+fushu(c,suanshi);
+                                T2.setText(suanshi);
+                                break;
+                            case 3:
+                                sum= a / b / c;
+                                suanshi=fushu(a,suanshi);
+                                suanshi=suanshi+"/";
+                                suanshi=suanshi+fushu(b,suanshi);
+                                suanshi=suanshi+"/";
+                                suanshi=suanshi+fushu(c,suanshi);
+                                T2.setText(suanshi);
+                                break;
+                        }
                         break;
                     case 4:
                         sum=1;
@@ -399,7 +399,11 @@ public class jieMian {
             public void actionPerformed(ActionEvent e) {
                 if(summary==tishu)
                 {
-                    JOptionPane.showMessageDialog(null, "答题已完成。答题总题数为"+tishu+",答对题数为"+dadui+",答错题数为"+dacuo+",未答题题数为"+noanswer+",答题使用时间:"+ allDuration /1000+"秒。");
+                    JOptionPane.showMessageDialog(null,
+                            "答题已完成。答题总题数为"+tishu+",答对题数为"+
+                                    dadui+",答错题数为"+dacuo+"\n"+",未答题题数为"+noanswer+"," +
+                                    "总分为"+(dadui*100)/tishu+"%"+"," +
+                                    "答题使用时间:"+ allDuration /1000+"秒。");
                     frame.setVisible(false);
 
                 }
@@ -427,6 +431,8 @@ public class jieMian {
 
 
     }
+    //把数字记录到suanshi字符串中
+    //判断随机产生的随机数是否为负数
     private static String fushu(int a,String suanshi) {
 
         if (a<0) {
